@@ -1,9 +1,104 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>DELI-VERY</title>
+        <title>Page title shown in window title</title>
+        <meta charset="utf-8"/>
     </head>
     <body>
-        <h1>Hello World!!!</h1>
+      <main>
+        <h1>Välkommen till BurgerOnline</h1>
+
+        <section>
+        <h2>Select burger</h2>
+        <p>This is where you execute burger selection</P>
+        </section>
+
+        <section>
+        <table>
+          <thead>
+            <tr>
+                <th><h2>Liten & vanlig</h2></th>
+                <th><h2>Min bästa kawaii uwu</h2></th>
+                <th><h2>pretty crispy</h2></th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr>
+              <th><img src="img/hamburgare.jpg" width="200" title="Liten och vanlig"></th>
+              <th><img src="img/kawaii.jpg" width="200" title="kawaii"></th>
+              <th><img src="img/fake.jpg" width="200" title="pretty crispy"></th>
+            </tr>
+          </tbody>
+
+          <tfoot>
+            <th><ul style="text-align: left; font-weight:normal">
+              <li>Tyvärr inte vegansk</li>
+              <li>Väldigt god dock!</li>
+              <li>Extra kostnader kan tillkomma :(</li>
+            </ul></th>
+            <th><ul style="text-align: left; font-weight:normal">
+              <li>Har TF av självklara anledningar</li>
+              <li>Perfekta bakismaten!!</li>
+              <li>cute but deadly</li>
+            </ul></th>
+            <th><ul style="text-align: left; font-weight:normal">
+              <li>Fake af och låtsats vara woke</li>
+              <li>Gör det mesta för views</li>
+              <li>James Charles?</li>
+            </ul></th>
+          </tfoot>
+        </table>
+        </section>
+
+        <section>
+        <h2>Customer information</h2>
+        <p>This is where you provide necessary information</P>
+        </section>
+
+        <section id="contact">
+          <h2>Delivery information</h2>
+        <form>
+          <p>
+            <label for="Full name">First</label><br>
+            <input type="text" id="Full name" name="fn" required="required" placeholder="First- and Last name">
+          </p>
+          <p>
+            <label for="E-mail">E-mail</label><br>
+            <input type="email" id="E-mail" name="em" placeholder="E-mail adress">
+          </p>
+          <p>
+            <label for="Street">Street</label><br>
+            <input type="text" id="street" name="sn" required="required" placeholder="Street name">
+          </p>
+          <p>
+            <label for="House">House</label><br>
+            <input type="number" id="email" name="em" required="required" placeholder="House number">
+          </p>
+          <p>
+            <label for="Payment method">Payment method</label><br>
+            <select id="Payment method" name="pm">
+              <option>Mastercard</option>
+              <option>Ca$h</option>
+              <option>snabba cash</option>
+              <option>Vänstra njure</option>
+              <option>Högra njure</option>
+          </select>
+        </p>
+
+        <p>
+          <label for="Gender">Gender</label><br>
+          <input type="radio" name="gender" value="male">Male<br>
+          <input type="radio" name="gender" value="female">Female<br>
+          <input type="radio" name="gender" value="Non-binary">Non-binary<br>
+          <input type="radio" name="gender" value="null" checked="checked">Do not wish to provide<br>
+        </p>
+        </form>
+        </section>
+
+        <button type="submit"><img src="img/yaas.jpg" width="20"> Send Info</button>
+
+      </main>
+      <footer>&copy salem</footer>
     </body>
 </html>
