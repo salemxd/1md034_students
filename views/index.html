@@ -1,62 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>Page title shown in window title</title>
+        <title>BurgerOnline</title>
         <meta charset="utf-8"/>
+        <!--<link rel="stylesheet" type="text/css" href="css/reset.css">-->
+        <link rel="stylesheet" type="text/css" href="css/style.css">
     </head>
     <body>
       <main>
-        <h1>Välkommen till BurgerOnline</h1>
+        <header id="header">
+        <img src="img/restaurang.jpg" title="header-image" id="header-image">
+        <h1 id="header-text">Välkommen till BurgerOnline</h1>
+        </header>
+        <section id="Hamburger-section">
 
-        <section>
-        <h2>Select burger</h2>
-        <p>This is where you execute burger selection</P>
+          <h2>Select burger</h2>
+          <p>This is where you execute burger selection</P>
+
+            <div class="wrapper">
+              <div class="top-box"><h2>Liten & vanlig</h2></div>
+              <div class="top-box"><h2>Min bästa kawaii uwu</h2></div>
+              <div class="top-box"><h2>pretty crispy</h2></div>
+
+              <div class="middle-box"><img src="img/hamburgare.jpg" width="200" title="Liten och vanlig"></div>
+              <div class="middle-box"><img src="img/kawaii.jpg" width="200" title="kawaii"></div>
+              <div class="middle-box"><img src="img/fake.jpg" width="200" title="pretty crispy"></div>
+
+              <div class="bottom-box"><ul style="text-align: left; font-weight:normal">
+                                      <li>Tyvärr inte vegansk</li>
+                                      <li>Väldigt <a class="god">god</a> dock!</li>
+                                      <li>Extra kostnader kan tillkomma :(</li>
+                                      </ul></div>
+
+              <div class="bottom-box"><ul style="text-align: left; font-weight:normal">
+                                      <li>Har TF av självklara anledningar</li>
+                                      <li>Perfekta bakismaten!!</li>
+                                      <li>Cute but <a class="god">deadly</a></li>
+                                      </ul></div>
+
+              <div class="bottom-box"><ul style="text-align: left; font-weight:normal">
+                                      <li>Fake af och låtsats vara woke</li>
+                                      <li>Gör det mesta för views</li>
+                                      <li>James Charles?</li>
+                                      </ul></div>
+              </div>
         </section>
 
-        <section>
-        <table>
-          <thead>
-            <tr>
-                <th><h2>Liten & vanlig</h2></th>
-                <th><h2>Min bästa kawaii uwu</h2></th>
-                <th><h2>pretty crispy</h2></th>
-            </tr>
-          </thead>
-
-          <tbody>
-            <tr>
-              <th><img src="img/hamburgare.jpg" width="200" title="Liten och vanlig"></th>
-              <th><img src="img/kawaii.jpg" width="200" title="kawaii"></th>
-              <th><img src="img/fake.jpg" width="200" title="pretty crispy"></th>
-            </tr>
-          </tbody>
-
-          <tfoot>
-            <th><ul style="text-align: left; font-weight:normal">
-              <li>Tyvärr inte vegansk</li>
-              <li>Väldigt god dock!</li>
-              <li>Extra kostnader kan tillkomma :(</li>
-            </ul></th>
-            <th><ul style="text-align: left; font-weight:normal">
-              <li>Har TF av självklara anledningar</li>
-              <li>Perfekta bakismaten!!</li>
-              <li>cute but deadly</li>
-            </ul></th>
-            <th><ul style="text-align: left; font-weight:normal">
-              <li>Fake af och låtsats vara woke</li>
-              <li>Gör det mesta för views</li>
-              <li>James Charles?</li>
-            </ul></th>
-          </tfoot>
-        </table>
-        </section>
-
-        <section>
+        <section id="Customer-inforamtion">
         <h2>Customer information</h2>
         <p>This is where you provide necessary information</P>
-        </section>
 
-        <section id="contact">
           <h2>Delivery information</h2>
         <form>
           <p>
@@ -95,10 +88,10 @@
         </p>
         </form>
         </section>
-
-        <button type="submit"><img src="img/yaas.jpg" width="20"> Send Info</button>
-
+        <button type="submit"><img src="img/yaas.jpg" width="20">Send Info</button>
       </main>
-      <footer>&copy salem</footer>
+
+      <hr>
+      <footer>&copy Salem Lojic</footer>
     </body>
 </html>
