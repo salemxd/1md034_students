@@ -58,12 +58,14 @@ section {
 }
 
 .top-box {
+  text-align: center;
    grid-row: 1
 }
 
 .middle-box {
   text-align: center;
-  background-color: #ffffff;
+  align-self: center;
+  /*background-color: #ffffff;*/
   grid-row: 2
 }
 
