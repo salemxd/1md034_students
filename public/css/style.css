@@ -50,29 +50,13 @@ section {
 	 font-size: 70px;
 }
 
-.wrapper {
-   width: 50%;
-   display: grid;
-   grid-gap: 10px;
-   grid-template-columns: auto auto  auto;
-}
-
-.top-box {
+#menu {
   text-align: center;
-   grid-row: 1
+  grid-row: 1;
 }
 
-.middle-box {
-  text-align: center;
-  align-self: center;
-  /*background-color: #ffffff;*/
-  grid-row: 2
-}
-
-.bottom-box {
-   grid-row: 3
-}
-
-.table{
+#hamburgerTable {
   display: grid;
+  margin-top: 20px;
+  margin-bottom: 30px;
 }

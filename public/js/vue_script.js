@@ -1,14 +1,3 @@
-
-function MenuItem(burgername, burgerkcal, burgergluten, burgerlactose, img){
-  this.name = burgername;
-  this.kcal = burgerkcal;
-  this.gluten = burgergluten;
-  this.lactose = burgerlactose;
-  this.image = img;
-}
-
-menuitems = [new MenuItem("Vanlig & liten", 600, true, false, "img/hamburgare.jpg"), new MenuItem("min bästa kawaii uwu", 300, false, true, "img/kawaii.jpg"), new MenuItem("pretty crispy", 600, true, true, "img/fake.jpg"), new MenuItem("otroligt vanlig", 100, false, false, "img/otrligtvanligt.jpg"), new MenuItem("so amazing", 10000, false, false, "img/amazing.jpg")];
-
 var vm = new Vue({
   el: '#Hamburger-section',
   data: {
@@ -16,4 +5,40 @@ var vm = new Vue({
   }
 })
 
-console.log("jaaaa");
+var vs = new Vue({
+    el: '#klar',
+    methods: {
+        markDone: function() {
+          var customerInformation = [
+            document.getElementById("Full name").value,
+            document.getElementById("E-mail").value,
+            document.getElementById("street").value,
+            document.getElementById("House").value,
+            document.getElementById("Payment method").value
+          ];
+          var radios = document.getElementsByName('genders');
+
+          if (document.getElementById("Male").checked) {
+            customerInformation.push(document.getElementById("Male").value);
+          }
+          if (document.getElementById("Female").checked) {
+            customerInformation.push(document.getElementById("Female").value);
+          }
+          if (document.getElementById("Non-binary").checked) {
+            customerInformation.push(document.getElementById("Non-binary").value);
+          }
+          if (document.getElementById("null").checked) {
+            customerInformation.push(document.getElementById("null").value);
+          }
+          for (var i = 0; i < menuitems.length; i++) {
+            if (document.getElementById(menuitems[i].name).checked) {
+              customerInformation.push(menuitems[i].name);
+            }
+          }
+
+          document.getElementById("order-information").innerHTML = "Din beställning:";
+          document.getElementById("burger-information").innerHTML = customerInformation.slice(6);
+          document.getElementById("important-information").innerHTML = customerInformation.slice(0,6);
+        }
+    }
+});

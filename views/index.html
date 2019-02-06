@@ -5,11 +5,13 @@
         <meta charset="utf-8"/>
         <!--<link rel="stylesheet" type="text/css" href="css/reset.css">-->
         <link rel="stylesheet" type="text/css" href="css/style.css">
+        <script src="js/menu.js" defer></script>
         <script src="js/js_script.js" defer></script>
         <script src="js/vue_script.js" defer></script>
         <script src="https://vuejs.org/js/vue.js"></script>
     </head>
     <body>
+
       <main>
         <header id="header">
         <img src="img/restaurang.jpg" title="header-image" id="header-image">
@@ -17,48 +19,18 @@
       </header>
 
     <section id="Hamburger-section">
-      <div class="table">
+      <div id="hamburgerTable">
       <div id="menu" v-for="burgers in menuitem">
         <div><h2>{{burgers.name}}</h2></div>
         <div><img v-bind:src="burgers.image" width="200"></div>
+        <li>{{burgers.kcal}} kcal</li>
+        <li v-if="burgers.gluten">Inehåller <a class="god">gluten</a></li>
+        <li v-if="burgers.lactose">Inehåller <a class="god">laktos</a></li>
+        <input type="checkbox" v-bind:id="burgers.name">
       </div>
     </div>
     </section>
-      <!--
-        <section id="Hamburger-section">
 
-          <h2>Select burger</h2>
-          <p>This is where you execute burger selection</P>
-
-            <div class="wrapper">
-              <div class="top-box"><h2>Liten & vanlig</h2></div>
-              <div class="top-box"><h2>Min bästa kawaii uwu</h2></div>
-              <div class="top-box"><h2>pretty crispy</h2></div>
-
-              <div class="middle-box"><img src="img/hamburgare.jpg" width="200" title="Liten och vanlig"></div>
-              <div class="middle-box"><img src="img/kawaii.jpg" width="200" title="kawaii"></div>
-              <div class="middle-box"><img src="img/fake.jpg" width="200" title="pretty crispy"></div>
-
-              <div class="bottom-box"><ul style="text-align: left; font-weight:normal">
-                                      <li>Tyvärr inte vegansk</li>
-                                      <li>Väldigt <a class="god">god</a> dock!</li>
-                                      <li>Extra kostnader kan tillkomma :(</li>
-                                      </ul></div>
-
-              <div class="bottom-box"><ul style="text-align: left; font-weight:normal">
-                                      <li>Har TF av självklara anledningar</li>
-                                      <li>Perfekta bakismaten!!</li>
-                                      <li>Cute but <a class="god">deadly</a></li>
-                                      </ul></div>
-
-              <div class="bottom-box"><ul style="text-align: left; font-weight:normal">
-                                      <li>Fake af och låtsats vara woke</li>
-                                      <li>Gör det mesta för views</li>
-                                      <li>James Charles?</li>
-                                      </ul></div>
-              </div>
-        </section>
-      -->
         <section id="Customer-inforamtion">
         <h2>Customer information</h2>
         <p>This is where you provide necessary information</P>
@@ -66,7 +38,7 @@
         <h2>Delivery information</h2>
         <form>
           <p>
-            <label for="Full name">First</label><br>
+            <label for="Full name">Full name</label><br>
             <input type="text" id="Full name" name="fn" required="required" placeholder="First- and Last name">
           </p>
           <p>
@@ -79,7 +51,7 @@
           </p>
           <p>
             <label for="House">House</label><br>
-            <input type="number" id="email" name="em" required="required" placeholder="House number">
+            <input type="number" id="House" name="em" required="required" placeholder="House number">
           </p>
           <p>
             <label for="Payment method">Payment method</label><br>
@@ -94,17 +66,23 @@
 
         <p>
           <label for="Gender">Gender</label><br>
-          <input type="radio" name="gender" value="male">Male<br>
-          <input type="radio" name="gender" value="female">Female<br>
-          <input type="radio" name="gender" value="Non-binary">Non-binary<br>
-          <input type="radio" name="gender" value="null" checked="checked">Do not wish to provide<br>
+          <input type="radio" name="gender" id="Male" value="Male">Male<br>
+          <input type="radio" name="gender" id="Female" value="Female">Female<br>
+          <input type="radio" name="gender" id="Non-binary" value="Non-binary">Non-binary<br>
+          <input type="radio" name="gender" id="null" value="Do not wish to provide" checked="checked">Do not wish to provide<br>
         </p>
+
         </form>
+
         </section>
-        <button type="submit"><img src="img/yaas.jpg" width="20">Send Info</button>
+        <button type="submit" id="klar" v-on:click="markDone()"><img src="img/yaas.jpg" width="20">Send Info</button>
       </main>
 
+      <h3 id="order-information"></h3>
+      <h4 id="burger-information"></h3>
+      <h4 id="important-information"></h3>
       <hr>
+
       <footer>&copy Salem Lojic</footer>
     </body>
 </html>
