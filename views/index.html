@@ -15,8 +15,6 @@
         <script src="https://vuejs.org/js/vue.js"></script>
     </head>
     <body>
-
-      <main>
         <header id="header">
         <img src="img/restaurang.jpg" title="header-image" id="header-image">
         <h1 id="header-text">Välkommen till BurgerOnline</h1>
@@ -34,7 +32,7 @@
       </div>
     </div>
     </section>
-
+        <main id="vuebody">
         <section id="Customer-inforamtion">
         <h2>Customer information</h2>
         <p>This is where you provide necessary information</P>
@@ -81,9 +79,9 @@
         </p>
 
         </form>
-
         </section>
-        <button type="submit" id="klar" v-on:click="markDone()"><img src="img/yaas.jpg" width="20">Send Info</button>
+        <button type="submit" id="klar" v-on:click="addOrder"><img src="img/yaas.jpg" width="20">Send Info</button>
+
       </main>
 
       <h3 id="order-information"></h3>
