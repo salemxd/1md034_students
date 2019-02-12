@@ -4,6 +4,10 @@
         <title>BurgerOnline</title>
         <meta charset="utf-8"/>
         <!--<link rel="stylesheet" type="text/css" href="css/reset.css">-->
+        <script src="/vue/vue.js" defer></script>
+        <script src="/socket.io/socket.io.js" defer></script>
+        <script src="js/deli-very.js" defer></script>
+        <link rel="stylesheet" type="text/css" href="css/deli-very.css">
         <link rel="stylesheet" type="text/css" href="css/style.css">
         <script src="js/menu.js" defer></script>
         <script src="js/js_script.js" defer></script>
@@ -45,14 +49,7 @@
             <label for="E-mail">E-mail</label><br>
             <input type="email" id="E-mail" name="em" placeholder="E-mail adress">
           </p>
-          <p>
-            <label for="Street">Street</label><br>
-            <input type="text" id="street" name="sn" required="required" placeholder="Street name">
-          </p>
-          <p>
-            <label for="House">House</label><br>
-            <input type="number" id="House" name="em" required="required" placeholder="House number">
-          </p>
+
           <p>
             <label for="Payment method">Payment method</label><br>
             <select id="Payment method" name="pm">
@@ -63,7 +60,18 @@
               <option>Högra njure</option>
           </select>
         </p>
-
+        <p>
+        <label for="E-mail">Please indicate point of delivery</label><br>
+        <div class="view-box">
+          <div id="dots" v-on:click="displayOrder">
+              <div
+                v-for="(order, key) in orders"
+                v-bind:style="{ left: order.details.x + 'px', top: order.details.y + 'px'}">
+                {{"T"}}
+              </div>
+          </div>
+        </div>
+      </p>
         <p>
           <label for="Gender">Gender</label><br>
           <input type="radio" name="gender" id="Male" value="Male">Male<br>

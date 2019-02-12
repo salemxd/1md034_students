@@ -12,8 +12,6 @@ var vs = new Vue({
           var customerInformation = [
             document.getElementById("Full name").value,
             document.getElementById("E-mail").value,
-            document.getElementById("street").value,
-            document.getElementById("House").value,
             document.getElementById("Payment method").value
           ];
           var radios = document.getElementsByName('genders');
@@ -37,8 +35,8 @@ var vs = new Vue({
           }
 
           document.getElementById("order-information").innerHTML = "Din beställning:";
-          document.getElementById("burger-information").innerHTML = customerInformation.slice(6);
-          document.getElementById("important-information").innerHTML = customerInformation.slice(0,6);
+          document.getElementById("burger-information").innerHTML = customerInformation.slice(4);
+          document.getElementById("important-information").innerHTML = customerInformation.slice(0,4);
         }
     }
 });

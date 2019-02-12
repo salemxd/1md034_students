@@ -33,6 +33,11 @@ var vm = new Vue({
                                            y: event.clientY - 10 - offset.y },
                                 orderItems: ["Beans", "Curry"]
                               });
+    },
+    displayOrder: function (){
+      var offset = {x: event.currentTarget.getBoundingClientRect().left,
+                    y: event.currentTarget.getBoundingClientRect().top};
+      Vue.set(this.orders, 0, {details: { x: event.clientX - 10 - offset.x, y: event.clientY - 10 - offset.y }});
     }
   }
 });
