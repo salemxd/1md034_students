@@ -8,6 +8,7 @@ var vm = new Vue({
   el: '#vuebody',
   data: {
     orders: {},
+    id: 0
   },
   methods: {
     getNext: function () {
@@ -17,10 +18,15 @@ var vm = new Vue({
       return lastOrder + 1;
     },
     addOrder: function (event) {
-      socket.emit("addOrder", { orderId: this.getNext(),
+      this.id = this.id +1;
+      socket.emit("addOrder", { orderId: this.id,
                                 details: this.orders[0].details,
-                                orderItems: this.orders[0].orderItems
+                                orderItems: this.orders[0].orderItems,
+                                personalInfo: this.orders[0].personalInfo
                               });
+      document.getElementById("order-information").innerHTML = "Order Information";
+      document.getElementById("burger-information").innerHTML = "Customer details";
+      document.getElementById("important-information").innerHTML = this.orders[0].personalInfo;
     },
     displayOrder: function (){
       var offset = {x: event.currentTarget.getBoundingClientRect().left,
@@ -49,7 +55,8 @@ var vm = new Vue({
           customerInformation.push(menuitems[i].name);
         }
       }
-      Vue.set(this.orders, 0, {details: { x: event.clientX - 10 - offset.x, y: event.clientY - 10 - offset.y }, orderItems: customerInformation.slice(4)});
+      Vue.set(this.orders, 0, {details: { x: event.clientX - 10 - offset.x, y: event.clientY - 10 - offset.y }, orderItems: customerInformation.slice(4), personalInfo: customerInformation.slice(0, 4)});
+
     }
   }
 });
